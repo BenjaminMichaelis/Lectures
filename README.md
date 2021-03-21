@@ -47,6 +47,7 @@ public string Text
         {
             get
             {
+                // { } is not null
                 return this._text is { } result ? result : string.Empty;
             }
 
@@ -60,3 +61,5 @@ public string Text
             }
         }
 ```
+
+How do we make a non-nullable reference type?
