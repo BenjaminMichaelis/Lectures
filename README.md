@@ -17,12 +17,14 @@ public string Text
         {
             get
             {
+                // this._text could change in runtime on multi-threading
                 if (string.IsNullOrEmpty(this._text))
                 {
                     return string.Empty;
                 }
                 else
                 {
+// Throws warning CS8603 - Possible null reference return
 #pragma warning disable CS8603
                     return this._text;
 #pragma warning disable CS8603
@@ -34,32 +36,36 @@ public string Text
                 if (this._text != value)
                 {
                     this._text = value;
-                    this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Text)));
                 }
             }
         }
 ```
 
-- Can be simplified to this and is better:
+- Can be simplified to this and is better using pattern matching:
 
 ```c
 public string Text
         {
-            get
-            {
-                // { } is not null
-                return this._text is { } result ? result : string.Empty;
-            }
+            // get
+            // {
+            //     // { } is not null
+            //     // return this._text is null ? string.Empty : this._text;
+            //     return this._text is { } result ? result : string.Empty;
+            // }
+
+            // null-coalesce operator
+            get => this._text ?? string.Empty;
 
             set
             {
                 if (this._text != value)
                 {
                     this._text = value;
-                    this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Text)));
                 }
             }
         }
 ```
 
 How do we make a non-nullable reference type?
+
+- Shown in NonNullableProperty.cs
