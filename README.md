@@ -1,5 +1,9 @@
 # Nullability and Pattern Matching
 
+## Link to copy of powerpoint (Original is in repo)
+
+https://docs.google.com/presentation/d/1TvqFoSy-i60KrgyVch-FZ8N4IHVVEwj9ief_RdOSLBc/edit?usp=sharing
+
 ## Outline
 
 - What is nullability and what are nullable reference types?

@@ -8,11 +8,9 @@ namespace Nullability
     {
         public NonNullableProperty(string text)
         {
-            Text = Text;
         }
-
+        public string Word { get; set; }
         public string? _text;
-
         public string Text
         {
             get => _text!;
