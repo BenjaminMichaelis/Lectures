@@ -24,15 +24,16 @@ namespace Nullability
                     return this._text;
                 }
             }
-                //get
-                //{
-                //    // { } is not null
-                //    return this._text is null ? string.Empty : this._text;
-                //    //return this._text is { } result ? result : string.Empty;
-                //}
 
-                // null-coalesce operator
-                //get => this._text ?? string.Empty;
+            // get
+            // {
+            //     // { } is not null
+            //     return this._text is null ? string.Empty : this._text;
+            //     // return this._text is { } result ? result : string.Empty;
+            // }
+
+            // null-coalesce operator
+            // get => this._text ?? string.Empty;
 
             set
             {
