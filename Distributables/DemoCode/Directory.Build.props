@@ -1,0 +1,15 @@
+<Project>
+    <!-- Cross Build Configuration -->
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;net472</TargetFrameworks>
+        <LangVersion>9.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <AdditionalFiles Include="../.editorconfig" />
+    </ItemGroup>
+</Project>
